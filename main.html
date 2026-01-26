@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation - Application Gestion Équipements</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset et style global */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f5f7fa;
+            color: #333;
+        }
+
+        /* Sidebar */
+        nav {
+            width: 250px;
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 30px 20px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            overflow-y: auto;
+        }
+        nav h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 20px;
+            color: #ecf0f1;
+        }
+        nav ul {
+            list-style: none;
+        }
+        nav ul li {
+            margin: 15px 0;
+        }
+        nav ul li a {
+            color: #bdc3c7;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            color: #ecf0f1;
+        }
+
+        /* Main content */
+        main {
+            margin-left: 270px;
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        /* Sections */
+        .section {
+            background: #fff;
+            padding: 25px 30px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        h2 {
+            font-size: 22px;
+            color: #34495e;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 18px;
+            color: #4a4a4a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+        }
+
+        ul {
+            margin-bottom: 15px;
+            padding-left: 20px;
+        }
+
+        code, pre {
+            background: #ecf0f1;
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-family: 'Roboto Mono', monospace;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        table th, table td {
+            padding: 10px;
+            text-align: left;
+        }
+        table th {
+            background-color: #3498db;
+            color: #fff;
+        }
+        table tr:nth-child(even) {
+            background-color: #f4f6f9;
+        }
+
+        .note {
+            background-color: #fff3cd;
+            border-left: 5px solid #f0ad4e;
+            padding: 12px 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            color: #856404;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            nav {
+                position: relative;
+                width: 100%;
+                height: auto;
+            }
+            main {
+                margin-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <h2>Documentation</h2>
+        <ul>
+            <li><a href="#accueil">Accueil</a></li>
+            <li><a href="#gestion-equipements">Gestion des équipements</a></li>
+            <li><a href="#types-marques-statuts">Types / Marques / Statuts</a></li>
+            <li><a href="#localisation">Localisation</a></li>
+            <li><a href="#dashboard">Dashboard</a></li>
+            <li><a href="#photos">Photos</a></li>
+            <li><a href="#faq">FAQ / erreurs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <div class="section" id="accueil">
+            <h1>Documentation - Application de Gestion des Équipements</h1>
+            <p>Bienvenue dans l'application de gestion des équipements. Cette application permet de gérer, suivre et organiser vos équipements facilement, avec un accès rapide aux informations et statistiques.</p>
+        </div>
+
+        <div class="section" id="gestion-equipements">
+            <h2>Gestion des équipements</h2>
+            <h3>Ajouter / Modifier / Supprimer</h3>
+            <ul>
+                <li><strong>Ajouter :</strong> Remplir le formulaire avec toutes les informations obligatoires pour créer un nouvel équipement.</li>
+                <li><strong>Modifier :</strong> Sélectionner un équipement existant et changer les champs nécessaires.</li>
+                <li><strong>Supprimer :</strong> Supprimer un équipement en cliquant sur l'option correspondante. Une confirmation sera demandée.</li>
+            </ul>
+            <h3>Champs obligatoires et erreurs</h3>
+            <p>Les champs obligatoires pour chaque équipement sont :</p>
+            <ul>
+                <li>Nom</li>
+                <li>Série</li>
+                <li>Type</li>
+                <li>Date d'achat (format JJ/MM/AAAA)</li>
+                <li>Marque</li>
+                <li>Localisation</li>
+                <li>Modèle</li>
+                <li>Statut</li>
+            </ul>
+            <p class="note">⚠️ Si un champ obligatoire est vide ou contient un texte placeholder comme "entrer" ou "définir", une erreur sera affichée.</p>
+        </div>
+
+        <div class="section" id="types-marques-statuts">
+    <h2>Types, Marques et Statuts</h2>
+
+    <h3>Types d’équipements disponibles</h3>
+    <ul>
+        <li>Ordinateur</li>
+        <li>Imprimante</li>
+        <li>Scanner</li>
+        <li>Laptop</li>
+        <li>Ecran</li>
+  
+        <li>Routeur</li>
+
+        <li>Câbles</li>
+        <li>Data Show</li>
+    </ul>
+
+    <h3>Marques disponibles par type</h3>
+    <table>
+        <tr>
+            <th>Type</th>
+            <th>Marques possibles</th>
+        </tr>
+        <tr>
+            <td>Ordinateur/ Laptop</td>
+            <td>HP, Dell, Lenovo, Asus, Acer, MSI, Apple, CHUWI</td>
+        </tr>
+        <tr>
+            <td>Ecran</td>
+            <td>BenQ,HP,Dell</td>
+        </tr>
+        <tr>
+            <td>Imprimante </td>
+            <td>Canon, Epson</td>
+        </tr>
+        <tr>
+            <td>Routeur</td>
+            <td> TP-Link, D-Link, Netgear, Linksys</td>
+        </tr>
+        
+        <tr>
+            <td>Cables</td>
+            <td>Havit, Hoco, Delock, Yesido</td>
+        </tr>
+    </table>
+
+    <h3>Statuts</h3>
+    <ul>
+        <li>Opérationnel</li>
+        <li>Prêté</li>
+        <li>En panne</li>
+        <li>Hors service</li>
+    </ul>
+</div>
+
+<div class="section" id="localisation">
+    <h2>Localisation</h2>
+
+    <h3>Travaux Dirigés</h3>
+    <ul>
+        <li>TD1 à TD10</li>
+    </ul>
+
+    <h3>Travaux Pratiques</h3>
+    <ul>
+        <li>TP1 à TP10</li>
+    </ul>
+
+    <h3>Salles et amphithéâtres</h3>
+    <ul>
+        <li>Salle de lecture</li>
+        <li>Amphi A</li>
+        <li>Amphi B</li>
+        <li>Amphi C</li>
+        <li>Amphi D</li>
+        <li>Amphi E</li>
+    </ul>
+
+    <h3>Laboratoires de recherche  et stockage</h3>
+    <ul>
+        <li>Labo 1</li>
+        <li>Labo 2</li>
+        <li>Labo 3</li>
+        <li>Magasin (Stock)</li>
+    </ul>
+</div>
+
+
+        <div class="section" id="dashboard">
+            <h2>Dashboard</h2>
+            <h3>Statistiques par statut</h3>
+            <ul>
+                <li>Opérationnel</li>
+                <li>Prêté</li>
+                <li>En panne</li>
+                <li>Hors service</li>
+            </ul>
+            <h3>Derniers équipements</h3>
+            <table>
+                <tr>
+                    <th>Modèle</th><th>Statut</th>
+                </tr>
+                <tr>
+                    <td>PC Bureau</td><td>Opérationnel</td>
+                </tr>
+                <tr>
+                  <td>Imprimante Laser</td><td>En panne</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="section" id="photos">
+            <h2>Photos</h2>
+            <p>Des images illustrant les différents types où chaque équipement a sa propre illustration</p>
+        </div>
+
+        <div class="section" id="faq">
+            <h2>FAQ / erreurs fréquentes</h2>
+            <ul>
+                <li><strong>Erreur :</strong> "Le champ Nom est obligatoire." → Assurez-vous de remplir tous les champs obligatoires.</li>
+                <li><strong>Erreur :</strong> "La date d'achat doit être au format JJ/MM/AAAA." → Vérifiez le format de la date.</li>
+                <li><strong>Erreur :</strong> "Aucune modification détectée." → Vérifiez que vous avez modifié au moins un champ avant de sauvegarder.</li>
+                <li><strong>Erreur :</strong> "Équipement introuvable." → Vérifiez l'ID de l'équipement que vous essayez de consulter.</li>
+            </ul>
+        </div>
+    </main>
+
+</body>
+</html>
